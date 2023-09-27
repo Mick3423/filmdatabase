@@ -1,5 +1,20 @@
 
+<?php
+require "settings/init.php";
+if (!empty($_POST["data"])){
 
+    $data = $_POST["data"];
+
+    $sql = "INSERT INTO filmoversigt (FilmNavn, FilmGenre, FilmDirector, FilmPris, FilmLength, FilmBudget, FilmBeskrivelse, FilmMedvirkende ) VALUES (:FilmNavn, :FilmGenre, :FilmDirector, :FilmPris, :FilmLength, :FilmBudget, :FilmBeskrivelse, :FilmMedvirkende)";
+    $bind = [":FilmNavn" =>  $data["FilmNavn"], ":FilmGenre" =>  $data["FilmGenre"], ":FilmDirector" =>  $data["FilmDirector"], ":FilmPris" =>  $data["FilmPris"],  ":FilmLength" =>  $data["FilmLength"],  ":FilmBudget" =>  $data["FilmBudget"],  ":FilmBeskrivelse" =>  $data["FilmBeskrivelse"],  ":FilmMedvirkende" =>  $data["FilmMedvirkende"] ];
+
+    $db->sql($sql, $bind, false );
+
+    echo "filmen er nu indsat. <a href='admin.php'>indsæt en film mere</a>";
+    exit;
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="da">
@@ -27,8 +42,8 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="form-group">
-                <label for="FilmNavn">FilmNavn </label>
-                <input class="form-control" type="text" name="data[FilmNavn ]" id="FilmNavn" placeholder="FilmNavn" value="">
+                <label for="FilmNavn">FilmNavn</label>
+                <input class="form-control" type="text" name="data[FilmNavn]" id="FilmNavn" placeholder="FilmNavn" value="">
             </div>
         </div>
         <div class="col-12 col-md-6">
@@ -37,7 +52,7 @@
         </div>
         <div class="col-12 col-md-6">
             <label for="FilmDirector "> FilmDirector </label>
-            <input class="form-control" type="text" name="data[FilmDirector ]" id="FilmDirector " placeholder="FilmDirector " value="">
+            <input class="form-control" type="text" name="data[FilmDirector]" id="FilmDirector " placeholder="FilmDirector " value="">
         </div>
         <div class="col-12 col-md-6">
             <label for="FilmPris"> FilmPris</label>
@@ -49,7 +64,7 @@
         </div>
         <div class="col-12 col-md-6">
             <label for="FilmBudget">FilmBudget </label>
-            <input class="form-control" type="number" step="0.1" name="data[FilmBudget]" id="FilmLength" placeholder="FilmBudget" value="">
+            <input class="form-control" type="number" step="0.1" name="data[FilmBudget]" id="FilmBudget" placeholder="FilmBudget" value="">
         </div>
     </div>
     <div class="col-12 ">
