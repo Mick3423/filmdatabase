@@ -4,9 +4,16 @@ require "settings/init.php";
 if (!empty($_POST["data"])){
 
     $data = $_POST["data"];
+    $file = $_FILES;
 
-    $sql = "INSERT INTO filmoversigt (FilmNavn, FilmGenre, FilmDirector, FilmPris, FilmLength, FilmBudget, FilmBeskrivelse, FilmMedvirkende ) VALUES (:FilmNavn, :FilmGenre, :FilmDirector, :FilmPris, :FilmLength, :FilmBudget, :FilmBeskrivelse, :FilmMedvirkende)";
-    $bind = [":FilmNavn" =>  $data["FilmNavn"], ":FilmGenre" =>  $data["FilmGenre"], ":FilmDirector" =>  $data["FilmDirector"], ":FilmPris" =>  $data["FilmPris"],  ":FilmLength" =>  $data["FilmLength"],  ":FilmBudget" =>  $data["FilmBudget"],  ":FilmBeskrivelse" =>  $data["FilmBeskrivelse"],  ":FilmMedvirkende" =>  $data["FilmMedvirkende"] ];
+
+
+    if (!empty($file["FilmBillede"]["tmp_name"])){
+        move_uploaded_file($file["FilmBillede"]["tmp_name"], "uploads/" . basename($file["FilmBillede"]["name"]) );
+    }
+
+    $sql = "INSERT INTO filmoversigt (FilmNavn, FilmGenre, FilmDirector, FilmPris, FilmLength, FilmBudget, FilmBeskrivelse, FilmMedvirkende, FilmBillede ) VALUES (:FilmNavn, :FilmGenre, :FilmDirector, :FilmPris, :FilmLength, :FilmBudget, :FilmBeskrivelse, :FilmMedvirkende, :FilmBillede )";
+    $bind = [":FilmNavn" =>  $data["FilmNavn"], ":FilmGenre" =>  $data["FilmGenre"], ":FilmDirector" =>  $data["FilmDirector"], ":FilmPris" =>  $data["FilmPris"],  ":FilmLength" =>  $data["FilmLength"],  ":FilmBudget" =>  $data["FilmBudget"],  ":FilmBeskrivelse" =>  $data["FilmBeskrivelse"],  ":FilmMedvirkende" =>  $data["FilmMedvirkende"], "FilmBillede" => ($file["FilmBillede"]["tmp_name"]) ? $file["FilmBillede"]["name"] : NULL ];
 
     $db->sql($sql, $bind, false );
 
@@ -38,7 +45,7 @@ if (!empty($_POST["data"])){
 <body>
 
 
-<form method="post" action="admin.php">
+<form method="post" action="admin.php" enctype="multipart/form-data">
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="form-group">
@@ -57,6 +64,11 @@ if (!empty($_POST["data"])){
         <div class="col-12 col-md-6">
             <label for="FilmPris"> FilmPris</label>
             <input class="form-control" type="number" step="0.1" name="data[FilmPris]" id="FilmPris" placeholder="Film Pris" value="">
+        </div>
+        <div class="col-12">
+            <label for="FilmBillede"> FilmBillede</label>
+            <input type="file" class="form-control" id="FilmBillede" name="FilmBillede">
+
         </div>
         <div class="col-12 col-md-6">
             <label for="FilmLength">FilmLength</label>
