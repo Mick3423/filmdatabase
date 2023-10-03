@@ -114,7 +114,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">Medvirkende</h5>
-                <p class="card-text"> >Keanu Reeves, Michael Nyqvist, Alfie Allen, Bridget Moynahan, Dean Winthers, Ian McShane, John Leguzamo, Willem Dafoe </p>
+                <p class="card-text"> Keanu Reeves, Michael Nyqvist, Alfie Allen, Bridget Moynahan, Dean Winthers, Ian McShane, John Leguzamo, Willem Dafoe </p>
 
 
             </div>
