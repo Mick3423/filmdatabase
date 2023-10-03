@@ -32,7 +32,7 @@
 					<a class="nav-link active" aria-current="page" href="#">liste</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">se mere</a>
+					<a class="nav-link active" aria-current="page" href="#">filmside</a>
 				</li>
 
 
