@@ -25,15 +25,15 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">forside</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">liste</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">filmside</a>
-				</li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.php">forside</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="filmliste.php">liste</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="filmside.php">filmside</a>
+                </li>
 
 
 			</ul>
