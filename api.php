@@ -7,6 +7,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 /*
  * password: skal udfyldes og være Filmbase
  * nameSearch: Valgfri
+ * priceSearch
  */
 
 header('Content-Type: application/json;');
@@ -22,10 +23,22 @@ if (isset($data["password"]) && $data["password"] == "Filmbase"){
         $sql .= " AND FilmNavn = :FilmNavn";
         $bind[":FilmNavn"] = $data["nameSearch"] ;
     }
-   $Film = $db->sql($sql, $bind,);
+
+
+    if (!empty($data["priceSearch"])) {
+        $sql .= " AND FilmPris = :FilmPris";
+        $bind[":FilmPris"] = $data["priceSearch"] ;
+    }
+
+    $sql .= " ORDER BY FilmPris ASC";
+
+
+
+
+   $Film = $db->sql($sql, $bind);
     header("HTTP/1.1 200 OK");
 
-    json_encode($Film);
+    echo json_encode($Film);
 
 } else {
 
