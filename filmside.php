@@ -1,3 +1,8 @@
+<?php
+require "settings/init.php";
+$film = $db->sql("SELECT * FROM filmoversigt WHERE FilmId = 10");
+?>
+
 <!DOCTYPE html>
 <html lang="da">
 <head>
@@ -47,12 +52,13 @@
 <div class="container pb-5 my-5 bg-light">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h3 class="display-4 fw-bold lh-1">John Wick</h3>
-            <p class="lead"> John Wick is a retired hitman who returns to the criminal underworld to settle a debt. When his former employer's son, Santino, orders his men to take out John's beloved puppy, an unexpected and deadly altercation ensues, leaving his beloved pup dead. Fueled by vengeance and a drive for justice, John embarks on a brutal rampage to take down Santino and his gang </p>
+            <h3 class="display-4 fw-bold lh-1"><?php echo $film[0]->FilmNavn; ?></h3>
+            <p class="lead"> <?php echo $film[0]->FilmBeskrivelse; ?> </p>
 
         </div>
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
-            <img  src="uploads/John_Wick_TeaserPoster.jpg" alt="john wick plakat" >
+            <img src="uploads/<?php echo $film[0]->FilmBillede; ?>">
+
         </div>
     </div>
 </div>
@@ -67,7 +73,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">pris</h5>
-                <p class="card-text"> prisen på at leje eller købe John wick er 40 kr</p>
+                <p class="card-text"> <?php echo $film[0]->FilmPris; ?></p>
 
 
             </div>
@@ -77,7 +83,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">filmens længde</h5>
-                <p class="card-text">filmen har en længde på 101 minutter </p>
+                <p class="card-text"> <?php echo $film[0]->FilmLength; ?> </p>
 
 
             </div>
@@ -87,7 +93,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">filmengenre </h5>
-                <p class="card-text"> action/crime/thriller</p>
+                <p class="card-text"> <?php echo $film[0]->FilmGenre; ?></p>
 
 
             </div>
@@ -104,7 +110,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">instruktør</h5>
-                <p class="card-text"> filmens instruktør er Chad Stahelski</p>
+                <p class="card-text"> <?php echo $film[0]->FilmDirector; ?></p>
 
 
             </div>
@@ -114,7 +120,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">Medvirkende</h5>
-                <p class="card-text"> Keanu Reeves, Michael Nyqvist, Alfie Allen, Bridget Moynahan, Dean Winthers, Ian McShane, John Leguzamo, Willem Dafoe </p>
+                <p class="card-text"> <?php echo $film[0]->FilmMedvirkende; ?> </p>
 
 
             </div>
@@ -124,7 +130,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">filmens budget</h5>
-                <p class="card-text">filmen havde et Budget på 30 millioner dollars</p>
+                <p class="card-text"><?php echo $film[0]->FilmBudget; ?></p>
 
 
             </div>
@@ -133,7 +139,7 @@
 
             <div class="card-body">
                 <h5 class="card-title text-uppercase">filmens oprettelse på databasen</h5>
-                <p class="card-text"> filmen blev oprettet på databasen 2023-10-03</p>
+                <p class="card-text"> <?php echo $film[0]->FilmDato; ?></p>
 
 
             </div>
