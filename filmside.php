@@ -8,7 +8,7 @@ $film = $db->sql("SELECT * FROM filmoversigt WHERE FilmId = 10");
 <head>
     <meta charset="utf-8">
 
-    <title>filmdatabase forside </title>
+    <title>filmside </title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
