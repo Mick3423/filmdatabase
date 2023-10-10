@@ -52,7 +52,7 @@
 
 		</div>
 		<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
-			<img class="rounded-circle" src="" alt="" >
+
 		</div>
 	</div>
 </div>
@@ -77,8 +77,36 @@
 
 	                     <div class="card-body">
 	                         <h5 class="card-title text-uppercase">liste</h5>
-	                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium consequuntur corporis deleniti eum excepturi impedit, modi nemo pariatur, placeat quasi ratione reiciendis repudiandae similique sit tenetur vero voluptatum? Maiores.</p>
-	                         <a href="" class="btn btn-primary">se listen her</a>
+	                         <p class="card-text"> på listen kan du søge på disse film
+                             <ul>
+                                 <li>
+                                     Django Unchained
+                                 </li>
+                                 <li>
+                                     Sonic The Hedgehog 2
+                                 </li>
+                                 <li>Back to the Future</li>
+                                 <li>  Avengers</li>
+                                 <li>Spider-Man</li>
+                                 <li>Seven</li>
+                                 <li>The NorthMan</li>
+                                 <li>Spider-Man: Across the Spider-verse</li>
+                                 <li> Nope</li>
+                                 <li>John Wick</li>
+                                 <li> The Karate Kid</li>
+                                 <li>Iron Man</li>
+                                 <li>Godzilla</li>
+                                 <li> Central Intelligence</li>
+                                 <li>Fight Club</li>
+                                 <li> The Matrix</li>
+                                 <li>The Terminator</li>
+                                 <li> Snakes on a plane</li>
+                                 <li> Princess Mononoke</li>
+                                 <li>Top Gun Maverick</li>
+                                 <li>The Wolf of Wall Street </li>
+
+                             </ul>
+	                         <a href="filmliste.php" class="btn btn-primary">søg på listen her</a>
 
 	                     </div>
 		 </div>
@@ -86,9 +114,9 @@
 	     <div class="card col-12 col-md-6 col-lg-4">
 
 	                     <div class="card-body">
-	                         <h5 class="card-title text-uppercase">se mere</h5>
-	                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ex explicabo iusto quos saepe. Adipisci iste perspiciatis quas sed vel vero voluptates. Adipisci aperiam atque distinctio ducimus fugit harum, quasi?</p>
-	                         <a href="" class="btn btn-primary">se mere her</a>
+	                         <h5 class="card-title text-uppercase">når du har søgt på en film</h5>
+	                         <p class="card-text">når du har søgt på en film kan du vil du komme ind på en ny side og der vil være en hel masse informationer om den valgte film</p>
+
 
 	                     </div>
 		 </div>
