@@ -20,14 +20,19 @@ if (isset($data["password"]) && $data["password"] == "Filmbase"){
     $bind = [];
 
     if (!empty($data["nameSearch"])) {
-        $sql .= " AND FilmNavn = :FilmNavn";
+        $sql .= " AND FilmNavn LIKE CONCAT('%', :FilmNavn, '%')";
         $bind[":FilmNavn"] = $data["nameSearch"] ;
     }
 
 
     if (!empty($data["priceSearch"])) {
-        $sql .= " AND FilmPris = :FilmPris";
+        $sql .= " AND FilmPris LIKE CONCAT('%', :FilmPris, '%')";
         $bind[":FilmPris"] = $data["priceSearch"] ;
+    }
+
+    if (!empty($data["genreSearch"])) {
+        $sql .= " AND FilmGenre  LIKE CONCAT('%', :FilmGenre, '%')";
+        $bind[":FilmGenre"] = $data["genreSearch"] ;
     }
 
     $sql .= " ORDER BY FilmPris ASC";
