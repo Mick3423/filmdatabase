@@ -1,36 +1,79 @@
-<!-- Instruktion til webbrowser om at vi kører HTML5 -->
 <!DOCTYPE html>
-
-<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
 <html lang="da">
-
-<!-- I <head> har man opsætning - det ser brugeren ikke, men det fortæller noget om siden -->
 <head>
-    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
     <meta charset="utf-8">
 
-    <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Film liste</title>
+    <title>filmside </title>
 
-    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
 
-    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
-    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<!-- i <body> har man alt indhold på siden som brugeren kan se -->
 <body>
 
-<!-- Her skal sidens indhold ligge -->
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">filmdatabase</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.php">forside</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="filmliste.php">liste</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="filmside.php">filmside</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="filmliste">
+        <div class="filter p-5">
+            <div class="row">
+                <div class="col-md-4 ">
+                    <input type="search" class="form-control nameSearch" placeholder="søg og find en film">
+                </div>
+                <div class="col-md-4 ">
+                    <input type="search" class="form-control priceSearch" placeholder="søg og find en pris">
+                </div>
+                <div class="col-md-4 ">
+                    <input type="search" class="form-control genreSearch" placeholder="søg og find en genre">
+                </div>
+            </div>
+        </div>
+        <div class="items">
+
+        </div>
+
+    </div>
+</div>
 
 
 
 
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+import Filmliste from "./js/filmliste.js";
+const filmliste = new Filmliste()
+filmliste.init()
+</script>
 </body>
 </html>
