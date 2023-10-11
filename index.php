@@ -106,7 +106,7 @@
                                  <li>The Wolf of Wall Street </li>
 
                              </ul>
-	                         <a href="filmliste.php" class="btn btn-primary">søg på listen her</a>
+	                         <a href="filmliste.php" class="btn btn-primary w-100 text-white">søg på listen her</a>
 
 	                     </div>
 		 </div>
